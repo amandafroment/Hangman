@@ -1,14 +1,9 @@
-// constants
-
 const button = document.querySelector(".button");
 const letters = document.querySelectorAll(".letters");
 const displayLetters = document.querySelector(".display-letters");
 const spaces = document.querySelector(".spaces");
 const structure = document.querySelectorAll(".structure");
 const lettersContainer = document.querySelector(".letters-container");
-// const mediaQuery = window.matchMedia("(max-width: 480px)");
-
-// state variables
 
 let animals = [
   "Antelope",
@@ -57,27 +52,15 @@ let chosenWord;
 let wrongGuesses = 0;
 let correctGuess = 0;
 
-// cached elements
-
-// event listeners
-
 for (let i = 0; i < letters.length; i++) {
   letters[i].addEventListener("click", handleMove);
 }
 
 button.addEventListener("click", initialize);
 
-// mediaQuery.addEventListener(handleScreenChanges);
-
-// functions
-
 function handleMove(e) {
-  // console.log(chosenWord);
-  // console.log(chosenWord.indexOf(e.target.textContent));
-  console.log(e.target.textContent);
   if (chosenWord.indexOf(e.target.textContent) !== -1) {
     let correctGuesses = document.getElementsByClassName(e.target.textContent);
-    // console.log(correctGuesses.length, "hello");
     for (let i = 0; i < correctGuesses.length; i++) {
       correctGuess++;
       console.log("correct guess", correctGuesses[i]);
@@ -91,11 +74,9 @@ function handleMove(e) {
       for (let i = 0; i < letters.length; i++) {
         letters[i].classList.add("hidden");
       }
-      console.log(correctGuess, "im here");
       newParaWinning = document.createElement("p");
       newParaWinning.setAttribute("class", "show");
       newParaWinning.setAttribute("id", "wonMsg");
-      // newParaWinning.style.margin = "0px";
       newParaWinning.innerHTML = "You won! Great job!";
       lettersContainer.appendChild(newParaWinning);
     }
@@ -121,7 +102,6 @@ function handleMove(e) {
       newPara.setAttribute("id", "lostMsg");
       newPara.innerHTML = "You lost! The word was " + chosenWord;
       lettersContainer.appendChild(newPara);
-      console.log(newPara);
     }
     wrongGuesses++;
   }
@@ -143,7 +123,6 @@ function initialize() {
   let number = Math.floor(Math.random() * (max - min) + min);
   chosenWord = animals[number].toUpperCase();
   spaces.innerHTML = "";
-  console.log(letters.length);
   for (let i = 0; i < letters.length; i++) {
     letters[i].classList.remove("darkgreen");
     letters[i].classList.add("white-visible");
