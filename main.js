@@ -6,6 +6,7 @@ const displayLetters = document.querySelector(".display-letters");
 const spaces = document.querySelector(".spaces");
 const structure = document.querySelectorAll(".structure");
 const lettersContainer = document.querySelector(".letters-container");
+// const mediaQuery = window.matchMedia("(max-width: 480px)");
 
 // state variables
 
@@ -66,6 +67,8 @@ for (let i = 0; i < letters.length; i++) {
 
 button.addEventListener("click", initialize);
 
+// mediaQuery.addEventListener(handleScreenChanges);
+
 // functions
 
 function handleMove(e) {
@@ -79,29 +82,24 @@ function handleMove(e) {
       correctGuess++;
       console.log("correct guess", correctGuesses[i]);
       const newSpan = document.createElement("span");
+      newSpan.classList.add("selected-letters");
       newSpan.innerText = e.target.textContent;
       correctGuesses[i].appendChild(newSpan);
     }
 
     if (correctGuess === chosenWord.length) {
       for (let i = 0; i < letters.length; i++) {
-        letters[i].style.visibility = "hidden";
-        letters[i].style.fontSize = "2px";
-        letters[i].style.padding = "0px";
+        letters[i].classList.add("hidden");
       }
       console.log(correctGuess, "im here");
       newParaWinning = document.createElement("p");
-      newParaWinning.setAttribute("class", "hidden");
+      newParaWinning.setAttribute("class", "show");
       newParaWinning.setAttribute("id", "wonMsg");
       // newParaWinning.style.margin = "0px";
-      newParaWinning.style.marginRight = "190px";
-      newParaWinning.style.marginBottom = "125px";
       newParaWinning.innerHTML = "You won! Great job!";
       lettersContainer.appendChild(newParaWinning);
     }
   } else if (chosenWord.indexOf(e.target.textContent) === -1) {
-    console.log("this is a structure", structure);
-
     if (wrongGuesses === 0) {
       structure[0].style.visibility = "visible";
     } else if (wrongGuesses === 1) {
@@ -116,23 +114,19 @@ function handleMove(e) {
 
     if (wrongGuesses === 4) {
       for (let i = 0; i < letters.length; i++) {
-        letters[i].style.visibility = "hidden";
-        letters[i].style.fontSize = "2px";
-        letters[i].style.padding = "0px";
+        letters[i].classList.add("hidden");
       }
       const newPara = document.createElement("p");
-      newPara.setAttribute("class", "hidden");
+      newPara.setAttribute("class", "show");
       newPara.setAttribute("id", "lostMsg");
-      newPara.style.margin = "0px";
-      newPara.style.marginBottom = "125px";
       newPara.innerHTML = "You lost! The word was " + chosenWord;
       lettersContainer.appendChild(newPara);
       console.log(newPara);
     }
     wrongGuesses++;
-    console.log("this letter isn't in the word");
   }
-  e.target.style.color = "darkgreen";
+  e.target.classList.remove("white-visible");
+  e.target.classList.add("darkgreen");
 }
 
 function createSpaces() {
@@ -149,11 +143,11 @@ function initialize() {
   let number = Math.floor(Math.random() * (max - min) + min);
   chosenWord = animals[number].toUpperCase();
   spaces.innerHTML = "";
+  console.log(letters.length);
   for (let i = 0; i < letters.length; i++) {
-    letters[i].style.color = "white";
-    letters[i].style.visibility = "visible";
-    letters[i].style.fontSize = "65px";
-    letters[i].style.padding = "25px";
+    letters[i].classList.remove("darkgreen");
+    letters[i].classList.add("white-visible");
+    letters[i].classList.remove("hidden");
   }
   for (let i = 0; i < structure.length; i++) {
     structure[i].style.visibility = "hidden";
@@ -168,7 +162,6 @@ function initialize() {
   }
   wrongGuesses = 0;
   correctGuess = 0;
-  console.log(chosenWord);
   createSpaces();
 }
 
