@@ -212,6 +212,7 @@ button:hover {
 }
 
 .darkgreen {
+  visibility: hidden;
   color: darkgreen;
 }
 
@@ -383,6 +384,7 @@ button:hover {
   }
 
   .darkgreen {
+    visibility: hidden;
     color: darkgreen;
   }
 }
@@ -534,6 +536,11 @@ button:hover {
   .selected-letters {
     font-size: 30px;
     margin-bottom: 35px;
+  }
+
+  .darkgreen {
+    visibility: hidden;
+    color: darkgreen;
   }
 
   button {
@@ -733,6 +740,7 @@ button:hover {
   }
 
   .darkgreen {
+    visibility: hidden;
     color: darkgreen;
   }
 }
@@ -856,6 +864,7 @@ button:hover {
   }
 
   .darkgreen {
+    visibility: hidden;
     color: darkgreen;
   }
 }

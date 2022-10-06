@@ -63,7 +63,6 @@ function handleMove(e) {
     let correctGuesses = document.getElementsByClassName(e.target.textContent);
     for (let i = 0; i < correctGuesses.length; i++) {
       correctGuess++;
-      console.log("correct guess", correctGuesses[i]);
       const newSpan = document.createElement("span");
       newSpan.classList.add("selected-letters");
       newSpan.innerText = e.target.textContent;
