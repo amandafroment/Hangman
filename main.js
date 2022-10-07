@@ -144,20 +144,3 @@ function initialize() {
 }
 
 initialize();
-
-// What I need to do:
-
-// the app should choose a word for the user to try and solve - check
-// render that value to the page and provide the appropriate letter spaces for the word
-// Wait for a player to click a letter
-
-// have an array of words for the computer to choose from - check
-
-// create a function that loops through all of the letters - check
-
-// if and else statements (if letter is in chosenWord, return word), if else, reveal a piece of the hangman structure.
-
-// think about what to do with multiple letters in the same word - done
-// maybe looping throughout the word - done
-// looping the chosen word to create divs for .length of them , add in the index number of the id to insert the letter into them (initialization) - done
-// looping through the index - done

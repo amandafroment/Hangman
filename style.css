@@ -213,7 +213,6 @@ button:hover {
 
 .darkgreen {
   visibility: hidden;
-  color: darkgreen;
 }
 
 @media only screen and (max-width: 480px) and (orientation: portrait) {
@@ -385,7 +384,6 @@ button:hover {
 
   .darkgreen {
     visibility: hidden;
-    color: darkgreen;
   }
 }
 
@@ -562,7 +560,7 @@ button:hover {
   }
 
   .darkgreen {
-    color: darkgreen;
+    visibility: hidden;
   }
 }
 
@@ -741,7 +739,6 @@ button:hover {
 
   .darkgreen {
     visibility: hidden;
-    color: darkgreen;
   }
 }
 
@@ -865,6 +862,5 @@ button:hover {
 
   .darkgreen {
     visibility: hidden;
-    color: darkgreen;
   }
 }
