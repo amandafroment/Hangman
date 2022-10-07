@@ -50,7 +50,7 @@ let animals = [
 ];
 let chosenWord;
 let wrongGuesses = 0;
-let correctGuess = 0;
+let correctLetter = 0;
 
 for (let i = 0; i < letters.length; i++) {
   letters[i].addEventListener("click", handleMove);
@@ -62,14 +62,14 @@ function handleMove(e) {
   if (chosenWord.indexOf(e.target.textContent) !== -1) {
     let correctGuesses = document.getElementsByClassName(e.target.textContent);
     for (let i = 0; i < correctGuesses.length; i++) {
-      correctGuess++;
+      correctLetter++;
       const newSpan = document.createElement("span");
       newSpan.classList.add("selected-letters");
       newSpan.innerText = e.target.textContent;
       correctGuesses[i].appendChild(newSpan);
     }
 
-    if (correctGuess === chosenWord.length) {
+    if (correctLetter === chosenWord.length) {
       for (let i = 0; i < letters.length; i++) {
         letters[i].classList.add("hidden");
       }
@@ -139,7 +139,7 @@ function initialize() {
     lettersContainer.removeChild(wonMsg);
   }
   wrongGuesses = 0;
-  correctGuess = 0;
+  correctLetter = 0;
   createSpaces();
 }
 
