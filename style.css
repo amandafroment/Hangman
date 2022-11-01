@@ -21,6 +21,7 @@ header {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 25px;
+  border-radius: 35px;
 }
 
 h1 {
@@ -63,6 +64,7 @@ main {
   opacity: 0.8;
   height: 100%;
   width: 50%;
+  border-radius: 35px 0px 0px 35px;
 }
 
 .head {
@@ -134,6 +136,7 @@ main {
   opacity: 0.8;
   height: 40%;
   width: 100%;
+  border-radius: 0px 35px 0px 0px;
 }
 
 .letters-container {
@@ -144,11 +147,11 @@ main {
   justify-content: center;
   row-gap: 0px;
   column-gap: 12px;
-  background-color: rgb(6, 32, 6);
-  opacity: 0.8;
+  background-color: rgb(6, 32, 6, 0.8);
   height: 60%;
   width: 100%;
   text-align: center;
+  border-radius: 0px 0px 35px 0px;
 }
 
 .letters {
@@ -158,6 +161,7 @@ main {
   padding: 25px;
   cursor: pointer;
   background-color: black;
+  border-radius: 35px;
 }
 
 .button {
@@ -173,6 +177,7 @@ button {
   border: 2px black solid;
   order: 2;
   margin: 25px;
+  border-radius: 25px;
 }
 
 button:hover {
@@ -190,6 +195,7 @@ button:hover {
   font-size: 65px;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .show {
@@ -435,6 +441,7 @@ button:hover {
     opacity: 0.8;
     height: 40%;
     width: 100%;
+    border-radius: 0px 0px 35px 35px;
   }
 
   .pole1 {
@@ -498,17 +505,18 @@ button:hover {
     opacity: 0.8;
     height: 40%;
     width: 100%;
+    border-radius: 35px 35px 0px 0px;
   }
 
   .letters-container {
     order: 4;
     justify-content: center;
     row-gap: 0px;
-    background-color: rgb(6, 32, 6);
-    opacity: 0.8;
+    background-color: rgb(6, 32, 6, 0.8);
     height: 60%;
     width: 100%;
     text-align: center;
+    border-radius: 0px;
   }
 
   .letters {
@@ -609,6 +617,7 @@ button:hover {
     opacity: 0.8;
     height: 40%;
     width: 100%;
+    border-radius: 0px 0px 35px 35px;
   }
 
   .head {
@@ -681,17 +690,18 @@ button:hover {
     opacity: 0.8;
     height: 50%;
     width: 100%;
+    border-radius: 35px 35px 0px 0px;
   }
 
   .letters-container {
     order: 4;
     justify-content: center;
     row-gap: 0px;
-    background-color: rgb(6, 32, 6);
-    opacity: 0.8;
+    background-color: rgb(6, 32, 6, 0.8);
     height: 50%;
     width: 100%;
     text-align: center;
+    border-radius: 0px;
   }
 
   .letters {
@@ -814,8 +824,7 @@ button:hover {
     justify-content: center;
     row-gap: 0px;
     column-gap: 12px;
-    background-color: rgb(6, 32, 6);
-    opacity: 0.8;
+    background-color: rgb(6, 32, 6, 0.8);
     height: 60%;
     width: 100%;
     text-align: center;
